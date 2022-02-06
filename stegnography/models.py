@@ -1,12 +1,6 @@
 from django.db import models
 # from .utils import encryption,encry
-from PIL import Image
-import numpy as np
-from io import BytesIO
-from django.core.files.base import ContentFile
-from django.core.files import File
 import wave
-import tempfile
 import uuid
 
 

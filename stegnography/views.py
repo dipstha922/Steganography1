@@ -1,9 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import encryptionForm,decryptionForm
-import numpy as np
 from .models import Uploads
-import wave
 from .utils import waveAudioEncrypt,waveAudioDecrypt,midiAudioDecrypt,midiAudioEncrypt
 
 

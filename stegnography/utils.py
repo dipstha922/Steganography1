@@ -1,11 +1,7 @@
-import  cv2 as cv
 import wave
-import numpy as np
-from PIL import Image
 import midi
 from keras.models import load_model
 from music21 import converter, instrument, note, chord, stream
-import pickle 
 
 def waveAudioEncrypt(songs,messages,audioId):
     song = wave.open(songs)
