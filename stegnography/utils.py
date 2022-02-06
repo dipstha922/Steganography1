@@ -2,6 +2,8 @@ import wave
 import midi
 from keras.models import load_model
 from music21 import converter, instrument, note, chord, stream
+import pickle
+import numpy as np
 
 def waveAudioEncrypt(songs,messages,audioId):
     song = wave.open(songs)
@@ -104,7 +106,9 @@ def midiAudioEncrypt(messages,audioId):
 
     n_vocab = len(pitchnames)
     # generate 200 elements
-    for note_index in range(200):
+    
+    for note_index in range(50):
+
         prediction_input = np.reshape(pattern, (1, len(pattern), 1)) # convert into numpy desired shape 
         prediction_input = prediction_input/float(n_vocab) # normalise
         
@@ -147,6 +151,7 @@ def midiAudioEncrypt(messages,audioId):
 
     # Save the pattern to disk
     midi.write_midifile(midi_song, tracks)
+
 
 
 

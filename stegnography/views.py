@@ -57,13 +57,14 @@ def create_encode(request):
        
         uploading = Uploads.objects.create(types="midi")
         # second create the file
+       
         midiAudioEncrypt(message,uploading.uniqueIds) # create along with encode 
         # third link the file created to uploaded file
         uploading.files = "/midi/{}.mid".format(uploading.uniqueIds)
         uploading.messages = message
         uploading.save()
         download  = Uploads.objects.get(uniqueIds=uploading.uniqueIds)
-        print(download)
+        
         content = {
             "downloadLink":uploading.uniqueIds,
             "file":"midi"
